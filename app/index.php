@@ -29,7 +29,7 @@ include 'inc/functions.php';
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="logo">
-							  <img class="img-responsive" alt="Logo" src="/sched/img/accedo-logo.jpg" />
+							  <img class="img-responsive" alt="Logo" src="img/accedo-logo.jpg" />
 						  </div>						
 						</div>
 					</div>
