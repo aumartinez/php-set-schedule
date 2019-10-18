@@ -177,8 +177,8 @@ include 'inc/functions.php';
                       echo "</label>";
                       echo "\n";											
                       echo "<input id=\"company-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"companies[]\" value=\"$company\"/>\n";
-											echo "<input id=\"visitortype-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"visitortype[]\" value=\"auth\"/>\n";
-                      echo "<input id=\"auth-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"personalids[]\" value=\"{$result['personalid']}\"/>\n";                
+	              echo "<input id=\"visitortype-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"visitortype[]\" value=\"auth\"/>\n";
+                      echo "<input id=\"auth-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"personalids[]\" value=\"{$result['personalid']}\"/>\n";
                       echo "</li>"."\n";                      
                       $i++;
                     }
