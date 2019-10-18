@@ -23,9 +23,5 @@ $headers = array("From: no-reply@company.com",
                  "X-Mailer: PHP/".PHP_VERSION);
 
 $headers = implode("\r\n", $headers);
-
 $sendemail = mail($to, $subject, $txt, $headers);
-
-$sendemail = mail($to, $subject, $txt, $headers);
-
 ?>
