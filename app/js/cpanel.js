@@ -223,4 +223,4 @@ function disableBtn(btn){
 }
 
 
-window.onload = run;
+window.addEventListener("load", run, false);
