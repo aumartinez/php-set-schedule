@@ -1,0 +1,286 @@
+/*General*/
+
+.red-text{
+  color:red;
+}
+
+.left{
+  float:left;
+  left:0;
+}
+
+/*Login page*/
+.signin #body-content{
+  float:none;
+  margin:auto;
+  max-width:300px;
+  margin-top:120px;
+}
+
+.signin #body-content input{
+  margin-bottom:5px;
+}
+
+/*Form*/
+
+.staff-list{
+  border:1px solid #ddd;
+  padding:5px;
+}
+
+.staff-list .escaped{
+  opacity:0;
+  height:0;
+  width:0;
+}
+
+.checkbox{
+  display:block;
+  position:relative;  
+}
+
+.checkbox:hover{
+  background-color:#e7e7e7;
+}
+
+.checkbox label{
+  width:100%;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+.checkbox input[type="checkbox"]{
+  opacity:0;
+}
+
+.checkbox input[type="checkbox"] + .cr{
+  display:inline-block;
+  position:absolute;
+  right:15px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  width:25px;
+  height:25px;
+}
+
+.checkbox input[type="checkbox"] + .cr > .cr-icon{
+  display:none;
+}
+
+.checkbox input[type="checkbox"]:checked + .cr > .cr-icon{
+  display:inline-block;
+  padding:3px;
+  color:green;
+}
+
+#add-guest,
+#add-comp{
+  font-size:30px;
+}
+
+#guest-list li{
+  margin-bottom:10px;
+  display:block;
+  overflow:hidden;
+}
+
+#guest-list li .form-control{
+  float:left;
+  width:30%;
+  margin-right:5px;
+}
+
+#guest-list li .form-control:last-child{
+  margin-right:0;
+}
+
+#guest-list li a{
+  float:left;
+  display:inline-block;
+  margin-left:5px;
+}
+
+.delete{
+  font-size:25px;
+}
+
+
+/*Dashboard controls*/
+
+#comp-list li .form-control{
+  float:left;
+  width:90%;
+  margin-right:5px;
+}
+
+.btn-genpass{
+  margin-bottom:15px;
+}
+
+/*Controlers*/
+
+.visit-status{
+  margin-left:15px;
+  background-color:#ccc;
+  display:inline-block;
+  border-radius:5px;
+  padding:5px;
+}
+
+#control-2{
+  margin-bottom:40px;
+}
+
+a.box{
+  display:block;
+  text-decoration:none;
+  color:#333;
+  padding:10px 15px;
+  background-color:#f5f5f5;
+  border:1px solid #ccc;
+  border-radius:5px;
+  margin-bottom:15px;
+}
+
+a.box h4{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  line-height:1em;
+}
+
+.box-content,
+#addcomp{
+  padding:15px;
+  background-color:#f5f5f5;
+}
+
+#company{
+  max-width:85%;
+  float:left;
+}
+
+table.report-table thead th{
+  vertical-align:top; 
+}
+
+.report-table td{  
+  white-space:nowrap;
+}
+
+/*Utilities*/
+
+.block{
+  display:block;
+}
+
+a.block{
+  text-decoration:none;
+}
+
+
+/*boostrap overrides*/
+
+.clearer{
+  clear:both;
+}
+
+.panel-heading{
+  padding:0;
+}
+
+.panel-title>a{
+  padding:10px 15px;
+}
+
+a.box .fa-minus,
+a.box.collapsed .fa-plus,
+.panel-title >a.block.collapsed .fa-plus,
+.panel-title >a.block .fa-minus{
+  display:inline-block;
+}
+
+a.box .fa-plus,
+a.box.collapsed .fa-minus,
+.panel-title >a.block .fa-plus,
+.panel-title >a.block.collapsed .fa-minus{
+  display:none;
+}
+
+.panel-footer > .pull-left{
+  margin-right:15px;
+}
+
+.panel-group form.panel{
+  margin-bottom:10px;
+}
+
+@media(max-width:767px){
+  
+  #guest-list li{
+    position:relative;
+  }
+  
+  #guest-list li .form-control{
+    float:left;
+    width:100%;
+    margin-bottom:5px;
+  }
+  
+  #guest-list li a{
+    position:absolute;
+    top:0;
+    right:0;
+  }
+  
+  #guest-list .sub-wrapper{
+    position:relative;
+    width:100%;
+    margin-top:40px;
+    overflow:hidden;
+    display:block;
+  }
+}
+
+@media(max-width:767px){
+  
+  .report-table td,
+  .report-table tr{
+    display:block;
+  }
+  
+  .report-table tr{
+    margin-bottom:15px;
+  }
+  
+  .report-table td span{
+    float:left;
+    margin-right:5px;
+  }
+  
+   .reportpanel .sub-panel:first-child{
+    padding-right:0;
+   }
+}
+
+@media(min-width:768px){
+  .btn-genpass{
+   margin-right:15px;
+  }
+  
+  .pass{
+    width:30%;
+    float:left;
+    margin-right:5px;
+  }
+  
+  .reportpanel .sub-panel{
+    width:50%;
+    float:left;  
+   }
+  
+  .reportpanel .sub-panel:first-child{
+    padding-right:15px;
+   }
+ 
+}
