@@ -248,7 +248,7 @@ include 'inc/functions.php';
                             $('#datetimepicker').datetimepicker({
                               locale: 'es',
                               format: 'DD/MM/YYYY hh:mm a',
-															minDate: new Date()
+		              minDate: new Date()
                             });
                         });
                     </script>
