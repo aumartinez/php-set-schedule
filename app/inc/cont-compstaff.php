@@ -13,9 +13,9 @@
 		$compusername = strtolower($compusername);
 		
     $pass = trim($_POST['addcomp_pass']);
-    $salt = '$6$rounds=5000$'.generateRandomString(8).'$';
     
-    $crypted = crypt($pass, $salt);
+    $salt = '$6$rounds=5000$'.generateRandomString(8).'$';
+    $crypted = substr(crypt($originalpass, $newsalt),strlen($newsalt));
 		
     $userpass1 = $crypted;
     $userpass2 = $salt;
