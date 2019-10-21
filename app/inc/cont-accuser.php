@@ -33,10 +33,10 @@ if(strlen($userpass) == 0){
   mysqli_close($conx);
 }
 else{
-   $pass = $userpass;
-    $salt = '$6$rounds=5000$'.generateRandomString(8).'$';
+    $pass = $userpass;
     
-    $crypted = crypt($pass, $salt);
+    $salt = '$6$rounds=5000$'.generateRandomString(8).'$';
+    $crypted = substr(crypt($originalpass, $newsalt),strlen($newsalt));
 		
     $userpass1 = $crypted;
     $userpass2 = $salt;
