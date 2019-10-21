@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
     $getSalt = mysqli_fetch_assoc($query);
     $salt = $getSalt['userpass2'];		
     
-    $crypted = crypt($userpass, $salt);
+    $crypted = substr(crypt($originalpass, $salt),strlen($salt));
     $userpass = $crypted;
     
     mysqli_free_result($query);
@@ -77,7 +77,6 @@ if(isset($_POST['submit'])){
         die ('Error :'.mysqli_error($conx));
       }
       
-      mysqli_free_result($update);
       mysqli_close($conx);
       
       header('Location:dashboard.php?cont=1');			
