@@ -17,7 +17,7 @@ include 'inc/functions.php';
   <html lang="en">
 
   <head>
-    <title>Accedo Access</title>
+    <title>Data Center Access</title>
     <?php include 'inc/meta.php';?>
   </head>
 
@@ -34,7 +34,7 @@ include 'inc/functions.php';
 						</div>
 					</div>
           <h1>
-          Accedo agenda de visitas
+          Data Center agenda de visitas
         </h1>
            
 					<div class="row">
@@ -177,8 +177,8 @@ include 'inc/functions.php';
                       echo "</label>";
                       echo "\n";											
                       echo "<input id=\"company-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"companies[]\" value=\"$company\"/>\n";
-	              echo "<input id=\"visitortype-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"visitortype[]\" value=\"auth\"/>\n";
-                      echo "<input id=\"auth-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"personalids[]\" value=\"{$result['personalid']}\"/>\n";
+											echo "<input id=\"visitortype-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"visitortype[]\" value=\"auth\"/>\n";
+                      echo "<input id=\"auth-{$i}\" type=\"checkbox\" class=\"escaped\" name=\"personalids[]\" value=\"{$result['personalid']}\"/>\n";                
                       echo "</li>"."\n";                      
                       $i++;
                     }
@@ -248,7 +248,7 @@ include 'inc/functions.php';
                             $('#datetimepicker').datetimepicker({
                               locale: 'es',
                               format: 'DD/MM/YYYY hh:mm a',
-		              minDate: new Date()
+															minDate: new Date()
                             });
                         });
                     </script>
