@@ -2,6 +2,8 @@ var counter = 0;
 var keyName;
 var values=[];
 
+window.addEventListener("load", run, false);
+
 function run(){  
   additem();
 }
@@ -72,5 +74,3 @@ function thischecked(id){
     document.getElementById(visitortype).checked = true;
   }  
 }
-
-window.onload = run;
