@@ -2,45 +2,31 @@
 
 include 'app/inc/mysqlconnect.php';
 
-$file = 'app/sql/startup.sql';
-$sql = file_get_contents($file);
-
-//Check if table already exists
-$testSql = '
-   SELECT 1
-   FROM `accedostaff`
-   LIMIT 1';
+// Check if table already exists by querying first entry
+$sql = '
+ SELECT *
+ FROM `accedostaff`
+ LIMIT 1';
    
-$eval = mysqli_query($conx, $testSql);
+$query = mysqli_query($conx, $sql);
 
-if ($eval !== false) {
-  $ready = false;
-  $query = mysqli_multi_query($conx, $sql);
-  
-  if(!$query) {
-    die ('Error :'.mysqli_errno($conx));
-  } 
-  else {
-    do {
-      // Store first result set
-      if ($result = mysqli_store_result($conx)){
-        // Fetch one and one row
-        while ($row = mysqli_fetch_row($result)){
-          printf("%s\n", $row[0]);
-        }
-        mysqli_free_result($result);
-      }
-    }
-    while (mysqli_next_result($conx));
-  }
-  
-  mysqli_close($conx);
-} 
-else {
+if($query) {
+  mysqli_free_result($query);  
   $ready = true;
   mysqli_close($conx);
 }
-
+else if (!$query){
+  $file = 'app/sql/startup.sql';
+  $sql = file_get_contents($file);
+  
+  $fileQuery =mysqli_query($conx, $sql);
+  
+  if(!$fileQuery){
+    die ('Error :'.mysqli_errno($conx));
+  }
+  
+  mysqli_close($conx);
+}
 ?>
 
 <!doctype html>
@@ -87,7 +73,7 @@ else {
          <?php
            if($ready == false) {
              echo "<p>";
-             echo "La tablas en la base de datos se configuraron correctamente.";
+             echo "La tablas en la base de datos se iniciaron y configuraron correctamente.";
              echo "</p>\n";
              echo "<p>";
              echo "Puede proceder al <a href=\"index.html\">inicio</a>.";
