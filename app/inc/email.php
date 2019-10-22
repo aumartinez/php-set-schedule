@@ -11,7 +11,7 @@ $serverUrl .= "admin.php"; // Admin login
     </head>
     <body>
       <div style="font-family: Arial, sans-serif;margin:60px auto;width:600px">
-        <p style="text-align: center;">
+        <p>
           <img src="http://accedo-gps.web44.net/demo/php-webapp-01/app/img/company-logo.jpg" />
         </p>
         <h3>
