@@ -10,3 +10,19 @@ The top level <code>index.html</code> file, is just a webpage with a link direct
 ## Startup
 
 Run the <code>startup.php</code> file to create/initialize the tables in the database.
+
+## Users access
+
+```
+.../app/login.php
+```
+
+Users will be directed from the start link to the users login page.
+
+## Admin access
+
+```
+.../app/admin.php
+```
+
+System admin should open the admin login page.
