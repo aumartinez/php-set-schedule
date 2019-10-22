@@ -17,7 +17,7 @@ include 'inc/functions.php';
   <html lang="en">
 
   <head>
-    <title>Accedo Access</title>
+    <title>DataCenter Access</title>
     <?php include 'inc/meta.php';?>
   </head>
 
