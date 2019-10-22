@@ -12,7 +12,7 @@ $serverUrl .= "admin.php"; // Admin login
     <body>
       <div style="font-family: Arial, sans-serif;margin:60px auto;width:600px">
         <p>
-          <img src="http://accedo-gps.web44.net/demo/php-webapp-01/app/img/company-logo.jpg" />
+          <img src="'.$serverUrl.'img/company-logo.jpg" />
         </p>
         <h3>
           Se recibió una nueva solicitud de visita al Data Center
@@ -20,7 +20,7 @@ $serverUrl .= "admin.php"; // Admin login
         <hr />
         <div>
           <p>
-            Para acceder a la solicitud recibida y aprobarla <a href="'.$serverUrl.'">haga click aqui</a>.
+            Para acceder a la solicitud recibida y aprobarla <a href="'.$serverUrl.'admin.php">haga click aqui</a>.
           </p>      
         </div>
       </div>
