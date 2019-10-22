@@ -2,7 +2,7 @@
 
 session_start();
 
-$logged = $_SESSION['loggedstaff'];
+$logged = isset($_SESSION['loggedstaff']) ? true : false;
 
 if(!$logged){
 	header('Location:loggedout.php');
@@ -27,7 +27,7 @@ include 'inc/functions.php';
         <div class="col-md-10 col-md-offset-1"><!--main body-->
 					<div class="row">
 						<div class="col-sm-6">
-							<img src="img/accedo-logo.jpg" alt="Logo" class="img-responsive"/>
+							<img src="img/company-logo.jpg" alt="Logo" class="img-responsive"/>
 						</div>
 					</div>
 					
@@ -78,7 +78,7 @@ include 'inc/functions.php';
 															 echo "active";
 														 }
 													 }
-													 ?>"><a data-toggle="pill" href="#third-tab">Usuarios Accedo</a></li>
+													 ?>"><a data-toggle="pill" href="#third-tab">Usuarios DataCenter</a></li>
 								<li class="<?php 
 													 if(isset($_GET['cont'])){
 														 if($_GET['cont'] == 4){
@@ -139,7 +139,7 @@ include 'inc/functions.php';
 											}
 										}
 										?>">
-									<h3>Usuarios Accedo</h3>
+									<h3>Usuarios DataCenter</h3>
 									<?php
 									
 									$accuserconfig = isset($_POST['setaccuserconfig'])?true:false;
