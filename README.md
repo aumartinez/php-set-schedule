@@ -9,4 +9,4 @@ The top level <code>index.html</code> file, is just a webpage with a link direct
 
 ## Startup
 
-Rung the <code>startup.php</code> file to create/initialize the tables in the database.
+Run the <code>startup.php</code> file to create/initialize the tables in the database.
