@@ -14,7 +14,7 @@ Run the <code>startup.php</code> file to create/initialize the tables in the dat
 ## Users access
 
 ```
-.../app/login.php
+.../app/login
 ```
 
 Users will be directed from the start link to the users login page.
@@ -22,7 +22,7 @@ Users will be directed from the start link to the users login page.
 ## Admin access
 
 ```
-.../app/admin.php
+.../app/admin
 ```
 
 System admin should open the admin login page.
