@@ -5,8 +5,8 @@ A PHP webapp to set schedules to a Data Center
 
 Download and copy all files and folders structure.
 
-The top level index.html file, is just a webpage with a link directing to the login page for users.
+The top level <code>index.html</code> file, is just a webpage with a link directing to the login page for users.
 
 ## Startup
 
-Rung the startup.php file to create/initialize the tables in the database.
+Rung the <code>startup.php</code> file to create/initialize the tables in the database.
