@@ -19,7 +19,7 @@ else if (!$query){
   $file = 'app/sql/startup.sql';
   $sql = file_get_contents($file);
   
-  $fileQuery =mysqli_query($conx, $sql);
+  $fileQuery = mysqli_query($conx, $sql);
   
   if(!$fileQuery){
     die ('Error :'.mysqli_errno($conx));
