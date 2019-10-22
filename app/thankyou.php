@@ -2,7 +2,7 @@
 
 session_start();
 
-$logged = $_SESSION['logged'];
+$logged = isset($_SESSION['logged'])?true:false;
 
 if(!$logged){
 	header('Location:logout.php');
@@ -77,8 +77,8 @@ if(isset($visitcode)){
   
   //STR_TO_DATE('20/10/2014 05:39 PM', '%d/%m/%Y %h:%i %p'))
   
-  $sql = "INSERT INTO `savedvisits` (date, visitcode, visitstatus, submitter, message)
-          VALUES (STR_TO_DATE('$date', '%d/%m/%Y %h:%i %p'), '$visitcode', 'pending', '$username', '$message')";
+  $sql = "INSERT INTO `savedvisits` (date, visitcode, visitstatus, submitter, message, assigned)
+          VALUES (STR_TO_DATE('$date', '%d/%m/%Y %h:%i %p'), '$visitcode', 'pending', '$username', '$message', 'sin asignar')";
   
   $savevisit = mysqli_query($conx, $sql);
   
@@ -148,7 +148,8 @@ if(isset($visitcode)){
   <head>
     <title>Thank you</title>
     <?php 
-    include 'inc/meta.php';
+    include 'inc/meta.php';   
+     
     ?>
   </head>
   <body>
