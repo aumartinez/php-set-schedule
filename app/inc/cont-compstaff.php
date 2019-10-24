@@ -101,7 +101,7 @@
 					?>
 				</select>
 				<input id="addcompdid" type="hidden" class="form-control" name="addcomp_compdid" value="" required/>
-        <label for="addcompname"/>Nombre y Apellidos</label><br />
+        <label for="addcompname">Nombre y Apellidos</label><br />
         <input id="addcompname" type="text" class="form-control" name="addcomp_name" value="" required/>
         <label>Cédula de identidad</label><br />
         <input id="addcompuserid" type="text" class="form-control" name="addcomp_userid" value="" required/>
@@ -197,7 +197,7 @@
             echo "</td>\n";
             
             echo "<td>";
-					  echo "<form action=".$_SERVER['PHP_SELF']."?cont=4 method=\"post\">";
+					  echo "<form action=\"".$_SERVER['PHP_SELF']."?cont=4\" method=\"post\">";
             echo $result['username'];
 					  echo "<input type=\"hidden\" name=\"setuserconfig\" value=\"".$result['username']."\"/>";
 					  echo "<span class=\"pull-right\">";
