@@ -83,8 +83,8 @@ foreach ($savedvisitArr as $val){
 }
 
 ?>
-<div class="panel-group" id="accordion"> <?php //Panel group start?>
-<?php
+<div class="panel-group" id="accordion">
+<?php //Panel group start
 	
 include 'inc/mysqlconnect.php';
  $tablename = "savedvisits";
@@ -144,14 +144,24 @@ if($rows>0){
 								echo "<span class=\"visit-status\">";
 								
 								echo "Estado: ";
+                $visitcode = $result['visitcode'];
 								echo "<strong>";
-								
-								$visitcode = $result['visitcode'];
-								
-							
-									echo $result['visitstatus'];									
-						
-																
+                echo "<span class=\"";
+                
+                if ($result['visitstatus'] == "pending"){
+                  echo "text-info";
+                }
+                else if ($result['visitstatus'] == "approved") {
+                  echo "text-success";
+                }
+                else {
+                  echo "text-muted";
+                }
+                
+                echo "\">";
+							  echo $result['visitstatus'];
+                echo "</span>";
+                
 								echo "</strong>";
 								
 								echo "</span>";
@@ -257,7 +267,7 @@ if($rows>0){
 								echo "<option value=\"cancelled\">cancelled</option>\n";
                 echo "</select>\n";
                 
-                echo "</div>"; //Update box ends
+                echo "</div>\n"; //Update box ends
                 
 								echo "<div class=\"pull-left \">"; //Select accompanion
                 echo "<p>";
@@ -310,13 +320,13 @@ if($rows>0){
 								echo "</div>"; //Collapse ends								
 								echo "</form>";								
                 
-    $visitsFormArray[$i] = $j;
-	  
-		$i++;
-		$j++;
+                $visitsFormArray[$i] = $j;
+                
+                $i++;
+                $j++;
 							}				
 	
-	mysqli_free_result($query);
+              mysqli_free_result($query);
 							mysqli_free_result($subquery);
               mysqli_free_result($userquery);
               mysqli_free_result($escortQuery);
@@ -330,4 +340,4 @@ if($rows>0){
 	$_SESSION['visitformarr'] = $visitsFormArray;
 	
 ?>
-</div>
+</div><!--/#accordion-->
