@@ -77,8 +77,24 @@ if(isset($visitcode)){
   
   //STR_TO_DATE('20/10/2014 05:39 PM', '%d/%m/%Y %h:%i %p'))
   
-  $sql = "INSERT INTO `savedvisits` (date, visitcode, visitstatus, submitter, message, assigned)
-          VALUES (STR_TO_DATE('$date', '%d/%m/%Y %h:%i %p'), '$visitcode', 'pending', '$username', '$message', 'sin asignar')";
+  $sql = "INSERT INTO `savedvisits` 
+          (
+            date, 
+            visitcode, 
+            visitstatus, 
+            submitter, 
+            message, 
+            assigned
+          )
+          VALUES 
+          (
+            STR_TO_DATE('$date', '%d/%m/%Y %h:%i %p'), 
+            '$visitcode', 
+            'pending', 
+            '$username', 
+            '$message', 
+            'sin asignar'
+          )";
   
   $savevisit = mysqli_query($conx, $sql);
   
@@ -136,10 +152,9 @@ if(isset($visitcode)){
 			die('Error: '.mysqli_errno($conx));
 		}
 	}
-  
-	include 'inc/email.php';	
-  
   mysqli_close($conx);
+  
+	include 'inc/email.php';
 }
 
 ?>
