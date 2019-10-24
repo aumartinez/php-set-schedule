@@ -1,10 +1,24 @@
 <?php
 $serverUrl  = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 $serverUrl .= $_SERVER['SERVER_NAME'];
-$serverUrl .= "/app/"; // Script path
-$serverUrl .= "admin.php"; // Admin login
+
+$str = $_SERVER['PHP_SELF'];
+$arr = explode("/", $str);
+$subUrl = array("");
+
+for ($i = 0; $i < count($arr); $i++) {
+  array_push($subUrl, $arr[$i]);
+  if ($arr[$i] == "app") {
+    break;
+  }
+}
+
+$str = join("/", $subUrl);
+$str = substr($str, 1);
+
+$serverUrl .= $str; // Script path
 	
-	$emailbody = '
+$emailbody = '
   <html>
     <head>
       <title>DataCenter Alert</title>
@@ -12,7 +26,7 @@ $serverUrl .= "admin.php"; // Admin login
     <body>
       <div style="font-family: Arial, sans-serif;margin:60px auto;width:600px">
         <p>
-          <img src="'.$serverUrl.'img/company-logo.jpg" />
+          <img src="'.$serverUrl.'/img/company-logo.jpg" />
         </p>
         <h3>
           Se recibió una nueva solicitud de visita al Data Center
@@ -20,7 +34,7 @@ $serverUrl .= "admin.php"; // Admin login
         <hr />
         <div>
           <p>
-            Para acceder a la solicitud recibida y aprobarla <a href="'.$serverUrl.'admin.php">haga click aqui</a>.
+            Para acceder a la solicitud recibida y aprobarla <a href="'.$serverUrl.'/admin.php">haga click aqui</a>.
           </p>      
         </div>
       </div>
@@ -29,7 +43,26 @@ $serverUrl .= "admin.php"; // Admin login
 	';
 
 // Email account to receive alerts
-$regemail = "somebody@company.com";
+
+include 'mysqlconnect.php';
+
+$tablename = "accedostaff";
+$username = "admin";
+$sql="SELECT *
+FROM $tablename
+WHERE username = '$username'";
+
+$query = mysqli_query($conx, $sql);
+
+if(!$query){
+  die("Error: ".mysqli_error($conx));
+}
+
+$result = mysqli_fetch_assoc($query);
+$regemail = trim($result['accemail']);
+
+mysqli_free_result($query);
+mysqli_close($conx);
 
 $to =$regemail; 
 $subject = "***Alerta de visita solicitada***";
