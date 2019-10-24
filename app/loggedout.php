@@ -6,8 +6,6 @@ session_start();
 unset($_SERVER['PHP_AUTH_USER']);
 unset($_SERVER['PHP_AUTH_PW']);
 
-header('HTTP/1.0 401 Unauthorized');
-
 //Clear any session variable
 session_unset();
 
@@ -59,7 +57,5 @@ session_destroy();
     countdown();
   </script>
   
-<?php include 'inc/bottomscripts.php'; ?>
-
 </body>
 </html>
