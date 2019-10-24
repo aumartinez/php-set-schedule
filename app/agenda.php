@@ -2,7 +2,7 @@
 
 session_start();
 
-$logged = $_SESSION['logged'];
+$logged = isset($_SESSION['logged'])?true:false;
 
 if(!$logged){
 	header('Location:logout.php');
@@ -78,8 +78,8 @@ include 'inc/functions.php';
 								echo $result['visitstatus'];
 								echo "</strong>";
 								echo "<br />\n";
-								echo "<h4>Participantes</h4>";
-								echo "</p>\n";
+                echo "</p>\n";
+								echo "<h4>Participantes</h4>";								
 								
 								$visitcode = $result['visitcode'];
 								
@@ -91,24 +91,26 @@ include 'inc/functions.php';
 								
 								$subquery = mysqli_query($conx, $subsql);
 								
-								echo "<table class=\"table table-striped\">";
-								echo "<thead>";
-								echo "<tr>";
+								echo "<table class=\"table table-striped\">\n";
+								echo "<thead>\n";
+								echo "<tr>\n";
 								echo "<th>";
 								echo "No.";
-								echo "</th>";
+								echo "</th>\n";
 								echo "<th>";
 								echo "Nombres y Apellidos";
-								echo "</th>";
+								echo "</th>\n";
 								echo "<th class=\"hidden-xs\">";
 								echo "Número de cédula";
-								echo "</th>";
+								echo "</th>\n";
 								echo "<th class=\"hidden-xs\">";
 								echo "Compañía";
-								echo "</th>";
+								echo "</th\n>";
 								echo "</tr>\n";
 								echo "</thead>\n";
 								
+                echo "<tbody>\n";
+                
 								$i = 1;
 								while($row = mysqli_fetch_assoc($subquery)){
 								 echo "<tr>";
@@ -127,6 +129,8 @@ include 'inc/functions.php';
 								 echo  "</tr>";
 									$i++;
 							  }
+                
+                echo "</tbody>\n";
 								echo "</table>";
 								echo "<p>&nbsp;</p>\n";
 								echo "<p><strong>Motivos de la visita:</strong></p>\n";
@@ -146,9 +150,7 @@ include 'inc/functions.php';
 					
         </div><!--/main body-->
       </div>
-    </div>
-   
+    </div>   
 
   </body>
-
   </html>
