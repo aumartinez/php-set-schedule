@@ -147,7 +147,7 @@ $tablename = "companies";
 			echo " name =\"";
 			echo "names[]";
 			echo "\"";
-			echo "class=\"form-control\" value=\"";
+			echo " class=\"form-control\" value=\"";
 			echo $subrow['name'];
 			echo "\"/>\n";
 			echo "</td>\n";
