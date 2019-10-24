@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$logged = $_SESSION['loggedstaff'];
+$logged = isset($_SESSION['loggedstaff'])?true:false;
 
 if(!$logged){
 	header('Location:loggedout.php');
