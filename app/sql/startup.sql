@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `accedostaff` (
 --
 
 INSERT INTO `accedostaff` (`id`, `name`, `accemail`, `cedula`, `username`, `userpass1`, `userpass2`, `admin`) VALUES
-(1, 'admin', '', '000-000000-0000', 'admin', 'b/Nfh8F4.9BPpF53qJP0VWR6cMQluXG1vef4jLpxqBJEsRsMwE3CjEAYj8miWZhXMXgv5I5FVRLFuLt4Qz4u30', '$6$rounds=5000$abcd1234$', 1);
+(1, 'admin', 'itdistro@company.com', '000-000000-0000', 'admin', 'b/Nfh8F4.9BPpF53qJP0VWR6cMQluXG1vef4jLpxqBJEsRsMwE3CjEAYj8miWZhXMXgv5I5FVRLFuLt4Qz4u30', '$6$rounds=5000$abcd1234$', 1);
 
 -- --------------------------------------------------------
 
