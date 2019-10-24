@@ -1,4 +1,5 @@
 <?php
+
   if(isset($_POST['saveaccuser'])){
     
     $pass = $_POST['accedo_pass'];
@@ -32,12 +33,14 @@
 		
 		if($rows == 0){
 			$sql = "INSERT INTO $tablename (
-			 name, accemail, cedula, username, userpass1, userpass2
+			 name, accemail, cedula, username, userpass1, userpass2, admin
 			)
 			VALUES(
-			 '$name', '$email','$cedula', '$accedousername', '$userpass1', '$userpass2'
+			 '$name', '$email','$cedula', '$accedousername', '$userpass1', '$userpass2', 1
 			)";
+
 			$insert = mysqli_query($conx, $sql);
+
 			if(!$insert){
 				die('Error: '.mysqli_error($conx));
 			}
@@ -72,8 +75,8 @@
         <label for="accuser">Nombre usuario</label>
         <input id="accuser" type="text" class="form-control" name="accedo_user" value="" required/>
 			  <div id="validateaccuser" class="red-text"></div>			  
-        <br />        
-        <button class="left btn-genpass" id="genpass" type="button">Generar contraseña: </button>      
+        <br />
+        <button class="left btn-genpass" id="genpass" type="button">Generar contraseña: </button>
         <input id="accpass" class="pass form-control" type="text" name="accedo_pass" value="" required/>
         <span><small>La contraseña debe ser de al menos 6 caracteres</small></span>
         
@@ -158,9 +161,9 @@
             echo "</td>\n";
             
             echo "<td>";
-					 echo "<form action=".$_SERVER['PHP_SELF']."?cont=3 method=\"post\">";
+					  echo "<form action=".$_SERVER['PHP_SELF']."?cont=3 method=\"post\">";
             echo $result['username'];
-					 echo "<input type=\"hidden\" name=\"setaccuserconfig\" value=\"".$result['username']."\"/>";
+					  echo "<input type=\"hidden\" name=\"setaccuserconfig\" value=\"".$result['username']."\"/>";
 					  echo "<span class=\"pull-right\">";
 					  echo "<button type=\"submit\">";
 					  echo "<i class=\"fa fa-wrench\" aria-hidden=\"true\"></i>";
