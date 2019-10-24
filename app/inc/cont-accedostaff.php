@@ -117,7 +117,7 @@
           
         echo "<table class=\"table table-striped\">";
           echo "<thead>";
-          echo "<tr>";
+          echo "<tr>\n";
           
           echo "<th>";
           echo "Item";
@@ -138,6 +138,9 @@
           echo "<th>";
           echo "Usuario";
           echo "</th>\n";
+          
+          echo "</tr>\n";
+          echo "</thead>";
           
           echo "<tbody>";
             
