@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-header('HTTP/1.0 401 Unauthorized');
 
 include 'inc/functions.php';
 
