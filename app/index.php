@@ -2,7 +2,7 @@
 
 session_start();
 
-$logged = $_SESSION['logged'];
+$logged = isset($_SESSION['logged'])?true:false;
 
 if(!$logged){
 	header('Location:logout.php');
@@ -34,8 +34,8 @@ include 'inc/functions.php';
 						</div>
 					</div>
           <h1>
-          Data Center agenda de visitas
-        </h1>
+            DataCenter agenda de visitas
+          </h1>
            
 					<div class="row">
 						<?php
@@ -59,8 +59,8 @@ include 'inc/functions.php';
 							echo "Visitas guardadas <strong>";
 							echo $rows;
 							echo "</strong></a>";
-							echo "</p>";
-							echo "</div>";
+							echo "</p>\n";
+							echo "</div>\n";
 						}
 						
 						mysqli_free_result($query);
@@ -152,7 +152,7 @@ include 'inc/functions.php';
                     
                     $visitcode = $username.generateRandomString(10);
                     
-                    echo "<input type=\"hidden\" name=\"visitcode\" value=\"{$visitcode}\" />";
+                    echo "<input type=\"hidden\" name=\"visitcode\" value=\"{$visitcode}\" />\n";
                     
                     include 'inc/mysqlconnect.php';
 
@@ -169,7 +169,7 @@ include 'inc/functions.php';
 											
                       echo "<label for=\"staff-{$i}\">";
                       echo $result['name'];                      
-                      echo "<input id=\"staff-{$i}\" type=\"checkbox\" name=\"names[]\"";
+                      echo "<input id=\"staff-{$i}\" type=\"checkbox\" name=\"names[]\" ";
                       echo "onchange=\"thischecked($i);\" ";
                       echo "value=\"{$result['name']}\" />";
 											
@@ -182,6 +182,8 @@ include 'inc/functions.php';
                       echo "</li>"."\n";                      
                       $i++;
                     }
+                    
+                    echo "</ul>\n";
                     
                     mysqli_free_result($query);
                     mysqli_close($conx);
