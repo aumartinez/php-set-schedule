@@ -74,7 +74,7 @@
     echo "<p class=\"visible-xs\">Reporte para el dia: ".$getDateResult['date']."</p>";
     
     echo "<table class=\"table report-table table-striped\">\n";
-    echo "<thead class=\"hidden-xs\">";
+    echo "<thead class=\"hidden-xs\">\n";
     echo "<tr>";
     
     echo "<th>";
@@ -83,35 +83,35 @@
     
     echo "<th>";
     echo "Nombres y Apellidos";
-    echo "</th>";
+    echo "</th>\n";
       
     echo "<th>";
     echo "Compañia";
-    echo "</th>";
+    echo "</th>\n";
     
     echo "<th>";
     echo "Cedula";
-    echo "</th>";
+    echo "</th>\n";
       
     echo "<th>";
     echo "Entrada";
-    echo "</th>";
+    echo "</th>\n";
     
     echo "<th>";
     echo "Salida";
-    echo "</th>";
+    echo "</th>\n";
     
     echo "<th>";
     echo "Acompañante";
-    echo "</th>";
+    echo "</th>\n";
     
-    echo "</tr>";
-    echo "</thead>";
+    echo "</tr>\n";
+    echo "</thead>\n";
       
-    echo "<tbody>";
+    echo "<tbody>\n";
     
     while($result = mysqli_fetch_assoc($query)){
-      echo "<tr>";
+      echo "<tr>\n";
       
       $date = $result['date'];
       $date = date_create($date);
@@ -119,19 +119,19 @@
       
       echo "<td><span class=\"visible-xs\"><strong>Fecha: </strong></span>";
       echo $date;
-      echo "</td>";          
+      echo "</td>\n";          
       
       echo "<td><span class=\"visible-xs\"><strong>Nombres: </strong></span>";
       echo $result['name'];
-      echo "</td>";
+      echo "</td>\n";
       
       echo "<td><span class=\"visible-xs\"><strong>Compañia: </strong></span>";
       echo $result['fullcompany'];
-      echo "</td>";
+      echo "</td>\n";
       
       echo "<td><span class=\"visible-xs\"><strong>Cedula/ID: </strong></span>";
       echo $result['signature'];
-      echo "</td>";
+      echo "</td>\n";
       
       $hour_in = $result['time_in'];
       $hour_out = $result['time_out'];
@@ -154,10 +154,10 @@
       echo $result['accedoescort'];
       echo "</td>";            
       
-      echo "</tr>";
+      echo "</tr>\n";
     }
     
-     echo "</tbody>";     
+     echo "</tbody>\n";     
     
     echo "</table>\n";
       
