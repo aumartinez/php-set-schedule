@@ -83,6 +83,7 @@ if(isset($_POST['submit'])){
     }		
     
     else{
+      header('HTTP/1.0 401 Unauthorized');
       $_SESSION['loggedstaff'] = false;
     }
   }
