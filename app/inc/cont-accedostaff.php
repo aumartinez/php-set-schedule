@@ -66,7 +66,7 @@
 				</a>
       
 			<div id="addaccuser" class="collapse box-content">
-        <label for="accname"/>Nombre y Apellidos</label><br />
+        <label for="accname">Nombre y Apellidos</label><br />
         <input id="accname" type="text" class="form-control" name="accedo_name" value="" required/>
         <label>Cédula de identidad</label><br />
         <input id="accid" type="text" class="form-control" name="accedo_id" value="" required/>
@@ -164,7 +164,7 @@
             echo "</td>\n";
             
             echo "<td>";
-					  echo "<form action=".$_SERVER['PHP_SELF']."?cont=3 method=\"post\">";
+					  echo "<form action=\"".$_SERVER['PHP_SELF']."?cont=3\" method=\"post\">";
             echo $result['username'];
 					  echo "<input type=\"hidden\" name=\"setaccuserconfig\" value=\"".$result['username']."\"/>";
 					  echo "<span class=\"pull-right\">";
