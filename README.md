@@ -25,4 +25,4 @@ Users will be directed from the start link to the users login page.
 .../app/admin
 ```
 
-System admin should open the admin login page. Access is different for the system administrator and users, due to the nature of the service. The user would not be able to create or modify its login/profile access or information, these should be setup an administrator from the IT Team serving the DataCenter.
+System admin should open the admin login page. Access is different for the system administrator and users, due to the nature of the service. The user would not be able to create or modify its login/profile access or information, these should be setup by an administrator from the IT Team serving the DataCenter.
