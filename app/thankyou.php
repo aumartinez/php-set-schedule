@@ -115,9 +115,9 @@ if(isset($visitcode)){
     $input[$i] = array(
       'visitcode' => $visitcode,
       'name' => $value,
-			'visitortype' => $visitortype[$i],
+      'visitortype' => $visitortype[$i],
       'personalid' => $personalids[$i],
-			'company' => $companies[$i]
+      'company' => $companies[$i]
     );
     $i++;
   }
