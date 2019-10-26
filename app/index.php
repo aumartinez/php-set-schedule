@@ -42,8 +42,8 @@ include 'inc/functions.php';
 						 include 'inc/mysqlconnect.php';
 						
 						 $sql = "SELECT *
-                                                         FROM savedvisits
-							 WHERE submitter = '$username'";
+                    FROM savedvisits
+							      WHERE submitter = '$username'";
 						
 						$query = mysqli_query($conx, $sql);
 						
@@ -205,7 +205,7 @@ include 'inc/functions.php';
                 <div class="sub-panel">
                   <div class="form-group">
                     <label for="comment">Comentarios:</label>
-                    <textarea class="form-control" name="message" rows="5" id="comment"></textarea>
+                    <textarea class="form-control" name="message" rows="5" id="comment"required></textarea>
                   </div>
                 </div>
                 
@@ -261,7 +261,7 @@ include 'inc/functions.php';
               
               <div class="col-sm-12">
                 <div class="pull-right">
-                  <input type="submit" name="submit" class="btn btn-default btn-primary" value="Guardar visita"/>
+                  <input type="submit" name="submit" onsubmit="validateform(event);" class="btn btn-default btn-primary" value="Guardar visita"/>
                   <br />
                   <br />
                 </div>

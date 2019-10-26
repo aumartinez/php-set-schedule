@@ -2,7 +2,7 @@
  
 $mysql_host = "localhost"; //bd host
 $mysql_database = "database"; //bd name
-$mysql_user = "root"; //bd username
+$mysql_user = "admin"; //bd username
 $mysql_password = "password"; //bd username pass
  
 //Open DB

@@ -5,7 +5,7 @@ var values=[];
 window.addEventListener("load", run, false);
 
 function run(){  
-  additem();
+  additem();  
 }
 
 function additem(){  
@@ -73,4 +73,15 @@ function thischecked(id){
     document.getElementById(auth).checked = true;
     document.getElementById(visitortype).checked = true;
   }  
+}
+
+function validateform(event) {
+  event.preventDefault();
+  var authstaff = document.querySelector(".staff-list input:checked");
+  if(!authstaff){
+    return false;
+  }
+  else {
+    return true;
+  }
 }
