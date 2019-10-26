@@ -75,13 +75,22 @@ function thischecked(id){
   }  
 }
 
-function validateform(event) {
-  event.preventDefault();
-  var authstaff = document.querySelector(".staff-list input:checked");
-  if(!authstaff){
+function validateform(evt) {
+  evt.preventDefault();  
+  var name = document.querySelector(".staff-list input:checked");
+  if(!name){
+    var parentElem = document.querySelector(".staff-list");
+    var alertDiv = document.createElement("div");
+    alertDiv.setAttribute("class", "well well-sm");
+    alertDiv.style.color = "red";
+    alertDiv.innerText = "Seleccione un nombre de la lista";
+    
+    parentElem.appendChild(alertDiv);
+    
     return false;
   }
   else {
-    return true;
-  }
+    var theForm = document.getElementById("main-form");
+    return theForm.submit();
+  }  
 }

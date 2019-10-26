@@ -107,7 +107,7 @@ include 'inc/functions.php';
           </div>
           
           <div class="row">
-            <form id="main-form" action="thankyou.php" method="post">
+            <form id="main-form" name="main-form" action="thankyou.php" method="post" onsubmit="return validateform(event);">
               <div class="col-sm-8">
                 <div class="panel">
                   <h3>
@@ -145,7 +145,7 @@ include 'inc/functions.php';
                     
                   </div>
                   
-                  <div class="staff-list">
+                  <div class="staff-list" required>
                     <p>
                       <strong>Seleccione de la lista a la persona que visitará las instalaciones:</strong>
                     </p>
@@ -245,23 +245,14 @@ include 'inc/functions.php';
                           </span>
                         </div>
                     </div>
-
-                    <script type="text/javascript">
-                       $(function () {
-                            $('#datetimepicker').datetimepicker({
-                              locale: 'es',
-                              format: 'DD/MM/YYYY hh:mm a',
-															minDate: new Date()
-                            });
-                        });
-                    </script>
+                    
                   </div>
                 
               </div>
               
               <div class="col-sm-12">
                 <div class="pull-right">
-                  <input type="submit" name="submit" onsubmit="validateform(event);" class="btn btn-default btn-primary" value="Guardar visita"/>
+                  <input type="submit" name="submitForm" class="btn btn-default btn-primary" value="Guardar visita"/>
                   <br />
                   <br />
                 </div>
@@ -271,6 +262,16 @@ include 'inc/functions.php';
         </div><!--/main body-->
       </div>
     </div>
+    
+    <script type="text/javascript">
+                       $(function () {
+                            $('#datetimepicker').datetimepicker({
+                              locale: 'es',
+                              format: 'DD/MM/YYYY hh:mm a',
+															minDate: new Date()
+                            });
+                        });
+                    </script>
 
     <?php include 'inc/bottomscripts.php'; ?>
 
