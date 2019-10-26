@@ -23,6 +23,11 @@
 
 /*Form*/
 
+.sec-padding {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 .staff-list{
   border:1px solid #ddd;
   padding:5px;

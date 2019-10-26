@@ -22,7 +22,7 @@ include 'inc/functions.php';
   </head>
 
   <body class="index">
-    <div class="container">
+    <div class="container sec-padding">
       <div class="row">
         <div class="col-md-10 col-md-offset-1"><!--main body-->
 					
