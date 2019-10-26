@@ -65,7 +65,7 @@ include 'inc/functions.php';
 						}
 						
 						mysqli_free_result($query);
-            mysqli_close($conx);
+                                                mysqli_close($conx);
 						
 						?>
 					</div>
