@@ -185,7 +185,7 @@ if(isset($visitcode)){
       </div>
     </div>
     
-		<script type="text/javascript">
+  <script type="text/javascript">
     var seconds;
     var counter;
     var timecount;
