@@ -104,8 +104,8 @@ if(isset($visitcode)){
   
   $visitcode;
   $names;
-	$visitortype;
-	$personalids;
+  $visitortype;
+  $personalids;
   $companies;  
   $i = 0;
   
