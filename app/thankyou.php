@@ -153,7 +153,7 @@ if(isset($visitcode)){
 		}
 	}
   mysqli_close($conx);
-  
+        //In preproduction environment phpmailer will submit a warning
 	@include 'inc/email.php';
 }
 
