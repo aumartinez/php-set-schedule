@@ -4,20 +4,17 @@ session_start();
 
 include 'inc/functions.php';
 
-$username = 0;
-$userpass = 0;
+include 'inc/mysqlconnect.php';
 
-if(isset($_POST['username'])){
-  $username = $_POST['username'];
-}
+$username = "";
+$userpass = "";
 
-if(isset($_POST['userpass'])){
-  $userpass = $_POST['userpass']; 
-}
+isset($_POST['username'])?$username = mysqli_real_escape_string($conx, trim($_POST['username'])):$username = false;
+isset($_POST['userpass'])?$userpass = mysqli_real_escape_string($conx, trim($_POST['userpass'])):$userpass = false;
+isset($_POST['userpass'])?$originalpass = mysqli_real_escape_string($conx, trim($_POST['userpass'])):$originalpass = false;
+isset($_POST['submit'])?$submit = $_POST['submit']:$submit=false;
 
-if(isset($_POST['userpass'])){
-  $originalpass = $_POST['userpass'];
-}
+mysqli_close($conx);
 
 if(isset($_POST['submit'])){
   if($username && $userpass){
