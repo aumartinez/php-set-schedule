@@ -5,7 +5,7 @@ include 'app/inc/mysqlconnect.php';
 // Check if table already exists by querying first entry
 $sql = '
  SELECT *
- FROM `accedostaff`
+ FROM accedostaff
  LIMIT 1';
    
 $query = mysqli_query($conx, $sql);
